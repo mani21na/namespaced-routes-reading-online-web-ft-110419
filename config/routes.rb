@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get '/stats', to: 'stats#index'
 
   get '/admin/stats', to: 'stats#index'
+
+  scope '/admin' do
+    resources :stats, only: [:index]
+  end
 end
